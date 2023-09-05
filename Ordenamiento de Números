@@ -1,0 +1,17 @@
+entrada = input("Ingresa una serie de números separados por espacios: ")
+
+cadena_numeros = entrada.split()
+
+numeros = [int(numero) for numero in cadena_numeros]
+
+for i in range(len(numeros)):
+
+    indice_minimo = i
+    for j in range(i + 1, len(numeros)):
+        if numeros[j] < numeros[indice_minimo]:
+            indice_minimo = j
+      
+    numeros[i], numeros[indice_minimo] = numeros[indice_minimo], numeros[i]
+
+print("Lista ordenada en orden ascendente:")
+print(numeros)
